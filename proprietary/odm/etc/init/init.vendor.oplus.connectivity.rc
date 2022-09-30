@@ -1,0 +1,33 @@
+#================================connectivity wifi related start========================================
+#ifdef OPLUS_FEATURE_WIFI_DUMP
+#JiaoBo@CONNECTIVITY.WIFI.BASIC.LOG.1162003, 2018/7/02
+#add for wifi dump related log collection and DCS handle, dynamic enable/disable wifi core dump, offer trigger wifi dump API.
+on property:sys.oplus.wifi.dump.needupload=1
+    start clearWifiDumpFile
+
+on property:sys.oplus.wifi.dump.logcollect=1
+    start clearWifiDumpFile
+on property:sys.oplus.wifi.dump.trigger=1
+    start triggerwifidump
+    setprop sys.oplus.wifi.dump.trigger 0
+
+service triggerwifidump /vendor/bin/sh /odm/bin/init.vendor.wifi.autochmod.sh "triggerwifidump"
+    class main
+    user root
+    group root misc wifi
+    disabled
+    oneshot
+
+service clearWifiDumpFile /vendor/bin/sh /odm/bin/init.vendor.wifi.autochmod.sh clearWifiDumpFile
+    class main
+    user root
+    group root misc wifi
+    disabled
+    oneshot
+#endif /* OPLUS_FEATURE_WIFI_DUMP */
+#================================connectivity wifi related end==========================================
+
+#================================connectivity bt related start==========================================
+
+#================================connectivity bt related end ===========================================
+
