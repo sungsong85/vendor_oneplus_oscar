@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C), 2016-2021, OPLUS Mobile Comm Corp., Ltd
+  All rights reserved.
+
+  File: - weak-network-config.xml
+  Description:
+  Xml file provide customize parameters for SiDO2.0 base on different scenario by policy
+  Version: 1.0
+  Date: 2022-04-24
+
+  Revision History:
+  XieGui      2022-04-24   1.0    Create this moudle
+-->
+<WeakNetworkIssuePolicyConfig>
+    <Version> 20220706.1 </Version>
+
+    <!--Yaohao@NETWORK.REG.2991082, 2022/04/26, create issue policy-->
+    <Issue name = "common_no_service">
+        <!--识别算法：Data和Voice都无服务超过60s-->
+        <CommonConfig policy_execute_max_count = "5" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "dds" wifi = "all"/>
+            <DetectThresh type = "duration" duration = "60"/>
+            <Action api = "force_nw_search,restart_radio" execute_interval = "10,30" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "2">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "non_dds" wifi = "false"/>
+            <DetectThresh type = "duration" duration = "60"/>
+            <Action api = "force_nw_search" execute_interval = "10" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "3">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "non_dds" wifi = "true"/>
+            <DetectThresh type = "duration" duration = "60"/>
+            <Action api = "force_nw_search,restart_radio" execute_interval = "10,30" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "4">
+            <DetectScene enable = "true" platform = "mtk" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "dds" wifi = "all"/>
+            <DetectThresh type = "duration" duration = "60"/>
+            <Action api = "re_register,restart_radio" execute_interval = "10,30" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "5">
+            <DetectScene enable = "true" platform = "mtk" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "non_dds" wifi = "false"/>
+            <DetectThresh type = "duration" duration = "60"/>
+            <Action api = "re_register" execute_interval = "10" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "6">
+            <DetectScene enable = "true" platform = "mtk" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "non_dds" wifi = "true"/>
+            <DetectThresh type = "duration" duration = "60"/>
+            <Action api = "re_register,restart_radio" execute_interval = "10,30" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+
+    <!--Yaohao@NETWORK.REG.2991082, 2022/04/26, create issue policy-->
+    <Issue name = "common_no_45g">
+        <!--识别算法：Data和Voice都无服务超过60s-->
+        <CommonConfig policy_execute_max_count = "5" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "all" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "dds" wifi = "all"/>
+            <DetectThresh type = "duration" duration = "120"/>
+            <Action api = "ps_detach_attach,restart_radio" execute_interval = "20,30" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "2">
+            <DetectScene enable = "true" platform = "all" user_scenario = "all" exclude_user_scenario = "deepsleep,doze" motion = "all" sub = "non_dds" wifi = "all"/>
+            <DetectThresh type = "duration" duration = "120" />
+            <Action api = "ps_detach_attach" execute_interval = "20" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+
+    <!--Yaohao@NETWORK.REG.2991082, 2022/04/26, create issue policy-->
+    <Issue name = "sa_poor_signal">
+        <!--识别算法：亮屏10mins内SA的弱信号超过60%，其中弱信号门限为NR RSRP<-110dBm或者sinr<0dB；
+        action执行前置条件：数据打分<70；
+        action回滚条件：1)LTE RSRP<-110 or RSRQ<-20；2)OOS；3)sa backoff 2.0原生恢复逻辑-->
+        <CommonConfig policy_execute_max_count = "2" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "all" user_scenario = "all" exclude_user_scenario = "game" motion = "all" sub = "dds" wifi = "all"/>
+            <IssuCondition poorSaRsrpThreshold = "-110" poorSaSinrThreshold = "-3"/>
+            <DetectThresh type = "proportion" duration = "600" proport = "60"/>
+            <Action api = "sa_backoff" execute_interval= "10" only_report_keylog = "false"/>
+            <ActionPreThresh data_sorce_less_than = "70"/>
+            <ActionRollbackThresh lte_rsrp = "-110"/>
+        </Policy>
+        <Policy id = "2">
+            <DetectScene enable = "true" platform = "all" user_scenario = "all" exclude_user_scenario = "game" motion = "all" sub = "non_dds" wifi = "all"/>
+            <IssuCondition poorSaRsrpThreshold = "-110" poorSaSinrThreshold = "-3"/>
+            <DetectThresh type = "proportion" duration = "600" proport = "60"/>
+            <Action api = "sa_backoff" execute_interval= "10" only_report_keylog = "false"/>
+            <ActionRollbackThresh lte_rsrp = "-110"/>
+        </Policy>
+    </Issue>
+
+    <!--XieGui@NETWORK.REG.2991082, 2022/04/26, create the policy-->
+    <Issue name = "lte_nr_pingpong">
+        <!--识别算法：60s内NR2L irat制式跳变次数>5；
+        action执行前置条件：LTE RSRP>-100dBm，SNR>3dB；
+        action回滚条件：sa backoff 2.0原生恢复逻辑-->
+        <CommonConfig policy_execute_max_count = "2" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "deepsleep" exclude_user_scenario = "null" motion = "still" sub = "all" wifi = "all"/>
+            <DetectThresh count = "8" duration = "100"/>
+            <Action api = "sa_backoff" execute_interval= "10" only_report_keylog = "false"/>
+            <ActionPreThresh lte_rsrp = "-100" lte_snr = "3"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "2">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "wx_video_call" exclude_user_scenario = "null" motion = "still" sub = "dds" wifi = "false"/>
+            <DetectThresh count = "3" duration = "30"/>
+            <Action api = "sa_backoff" execute_interval= "10" only_report_keylog = "false"/>
+            <ActionPreThresh lte_rsrp = "-100" lte_snr = "3"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "3">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "game" exclude_user_scenario = "null" motion = "still" sub = "dds" wifi = "false"/>
+            <DetectThresh count = "3" duration = "30"/>
+            <Action api = "sa_backoff" execute_interval= "10" only_report_keylog = "false"/>
+            <ActionPreThresh lte_rsrp = "-100" lte_snr = "3"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "4">
+            <DetectScene enable = "true" platform = "all" user_scenario = "null" exclude_user_scenario = "null" motion = "still" sub = "all" wifi = "all"/>
+            <DetectThresh count = "6" duration = "50"/>
+            <Action api = "sa_backoff" execute_interval= "10" only_report_keylog = "false"/>
+            <ActionPreThresh lte_rsrp = "-100" lte_snr = "3"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+
+    <!--XieGui@NETWORK.REG.2991082, 2022/04/26, create issue policy-->
+    <Issue name = "gw_lte_pingpong_lte_poor_signal">
+        <!--识别算法：60s内L2gw irat制式跳变次数>4，期间lte小区没有发生改变；
+        action执行前置条件：LTE RSRP<-118dBm；
+        action回滚条件：null-->
+        <CommonConfig policy_execute_max_count = "5" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "doze" exclude_user_scenario = "null" motion = "still" sub = "all" wifi = "all"/>
+            <DetectThresh count = "4" duration = "60"/>
+            <Action api = "qc_lte_idle_bar_cell" execute_interval= "30" only_report_keylog = "false"/>
+            <ActionPreThresh lte_rsrp = "-118"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "2">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "deepsleep" exclude_user_scenario = "null" motion = "still" sub = "all" wifi = "all"/>
+            <DetectThresh count = "6" duration = "100"/>
+            <Action api = "qc_lte_idle_bar_cell" execute_interval= "30" only_report_keylog = "false"/>
+            <ActionPreThresh lte_rsrp = "-118"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+
+    <!--QuWenlong@NETWORK.REG.2991082, 2022/04/26, create issue policy-->
+    <Issue name = "dual_sim_coop_no_service">
+        <!--识别算法：相同运营商卡：20s内出现两张卡出现一张卡无服务，异常卡会执行正常卡所在RAT的强搜
+            场景1：非游戏场景，对所有卡生效
+            场景2：游戏场景，wifi连接时，对所有卡生效
+            场景3：游戏场景，wifi未连接时，对主卡生效-->
+        <CommonConfig policy_execute_max_count = "5" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "all" exclude_user_scenario = "game" motion = "all" sub = "all" wifi = "all"/>
+            <DetectThresh type = "duration" duration = "20"/>
+            <!--temp use qc_background_search, will be replaced by acq lte and research lte-->
+            <Action api = "force_plmn_scan" execute_interval= "40" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "2">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "game" exclude_user_scenario = "null" motion = "all" sub = "all" wifi = "true"/>
+            <DetectThresh type = "duration" duration = "20"/>
+            <!--temp use qc_background_search, will be replaced by acq lte and research lte-->
+            <Action api = "force_plmn_scan" execute_interval= "40" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+        <Policy id = "3">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "game" exclude_user_scenario = "null" motion = "all" sub = "dds" wifi = "false"/>
+            <DetectThresh type = "duration" duration = "20"/>
+            <!--temp use qc_background_search, will be replaced by acq lte and research lte-->
+            <Action api = "force_plmn_scan" execute_interval= "40" only_report_keylog = "false"/>
+            <ActionPreThresh value = "null"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+
+    <!--QuWenlong@NETWORK.REG.2991082, 2022/04/26, create issue policy-->
+    <Issue name = "dual_sim_coop_no_45g">
+        <!--识别算法：相同运营商卡：20s内出现一张卡在2/3G，另一张卡在4/5G,执行异常卡背景搜-->
+        <CommonConfig policy_execute_max_count = "5" policy_execute_interval = "1800"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "qcom" user_scenario = "all" exclude_user_scenario = "null" motion = "still" sub = "dds" wifi = "all"/>
+            <DetectThresh type = "duration" duration = "20"/>
+            <Action api = "qc_background_search" execute_interval= "40" only_report_keylog = "false"/>
+            <ActionPreThresh sa_rsrp = "-100" sa_sinr = "0"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+
+    <!--Xiaolong.Su@NETWORK.REG.3651568, 2022/05/26, create issue policy-->
+    <Issue name = "5g_icon_pingpong">
+        <!--识别算法：状态栏图标频繁5G跳4G：连续5个70s的窗口内，分别出现两次5G跳4G-->
+        <CommonConfig policy_execute_max_count = "10" policy_execute_interval = "0"/>
+        <Policy id = "1">
+            <DetectScene enable = "true" platform = "all" user_scenario = "all" exclude_user_scenario = "deepsleep" motion = "still" sub = "all" wifi = "all"/>
+            <DetectThresh type = "frequency" duration = "70" count = "2" />
+            <Action api = "set_5g_icon_delay_timer" execute_interval= "0" only_report_keylog = "true"/>
+            <ActionPreThresh sa_rsrp = "-100" sa_sinr = "0"/>
+            <ActionRollbackThresh value = "null"/>
+        </Policy>
+    </Issue>
+</WeakNetworkIssuePolicyConfig>
