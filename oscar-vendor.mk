@@ -1411,7 +1411,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oscar/proprietary/product/etc/permissions/qti_telephony_utils_prd.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/qti_telephony_utils_prd.xml \
     vendor/oneplus/oscar/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
     vendor/oneplus/oscar/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml \
-    vendor/oneplus/oscar/proprietary/system_ext/apex/com.android.vndk.v30.apex:$(TARGET_COPY_OUT_SYSTEM_EXT)/apex/com.android.vndk.v30.apex \
     vendor/oneplus/oscar/proprietary/system_ext/bin/CLGen:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/CLGen \
     vendor/oneplus/oscar/proprietary/system_ext/bin/PmicHistoryClear:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/PmicHistoryClear \
     vendor/oneplus/oscar/proprietary/system_ext/bin/aptxalsOverlayCreateProject.sh:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/aptxalsOverlayCreateProject.sh \
