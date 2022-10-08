@@ -2218,9 +2218,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oscar/proprietary/system_ext/etc/network_data_otunnelconfig.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/network_data_otunnelconfig.xml \
     vendor/oneplus/oscar/proprietary/system_ext/etc/nfcee_access.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/nfcee_access.xml \
     vendor/oneplus/oscar/proprietary/system_ext/etc/nfcsvc_access.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/nfcsvc_access.xml \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/oappnetcontrol_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/oappnetcontrol_config.xml \
     vendor/oneplus/oscar/proprietary/system_ext/etc/oiface/oiface.config:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/oiface/oiface.config \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/osysnetcontrol_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/osysnetcontrol_config.xml \
     vendor/oneplus/oscar/proprietary/system_ext/etc/perf/wlc_model.tflite:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/perf/wlc_model.tflite \
     vendor/oneplus/oscar/proprietary/system_ext/etc/permissions/android.software.verified_boot.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.software.verified_boot.xml \
     vendor/oneplus/oscar/proprietary/system_ext/etc/permissions/androidx.window.sidecar.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/androidx.window.sidecar.xml \
