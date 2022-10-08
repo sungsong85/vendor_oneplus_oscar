@@ -1757,7 +1757,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.op2.mount.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.op2.mount.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.custom_logo.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.custom_logo.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.debug.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.debug.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.rootdir.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.rootdir.rc \
+    #vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.rootdir.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.rootdir.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.video.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.video.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.qti.bt.logger.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.qti.bt.logger.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.sys.oplus.connectivity.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.sys.oplus.connectivity.rc \
