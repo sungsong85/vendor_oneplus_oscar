@@ -798,8 +798,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oscar/proprietary/odm/etc/nfc/st21nfc_fw.bin_st21h:$(TARGET_COPY_OUT_ODM)/etc/nfc/st21nfc_fw.bin_st21h \
     vendor/oneplus/oscar/proprietary/odm/etc/nfc/st21nfc_fw7.bin_st21h:$(TARGET_COPY_OUT_ODM)/etc/nfc/st21nfc_fw7.bin_st21h \
     vendor/oneplus/oscar/proprietary/odm/etc/oplus.fstab:$(TARGET_COPY_OUT_ODM)/etc/oplus.fstab \
-    vendor/oneplus/oscar/proprietary/odm/etc/orms/orms_core_config.xml:$(TARGET_COPY_OUT_ODM)/etc/orms/orms_core_config.xml \
-    vendor/oneplus/oscar/proprietary/odm/etc/orms/orms_permission_config.xml:$(TARGET_COPY_OUT_ODM)/etc/orms/orms_permission_config.xml \
     vendor/oneplus/oscar/proprietary/odm/etc/permissions/sku_6/com.oplus.nfc_feature.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_6/com.oplus.nfc_feature.xml \
     vendor/oneplus/oscar/proprietary/odm/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml \
     vendor/oneplus/oscar/proprietary/odm/etc/permissions/vendor-oplus-hardware-biometrics-fingerprintpay.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/vendor-oplus-hardware-biometrics-fingerprintpay.xml \
