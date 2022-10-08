@@ -6029,7 +6029,6 @@ PRODUCT_PACKAGES += \
     getcplc \
     izat.xt.srv \
     nfcvendorlib \
-    oplus-framework-res \
     oplus-hidl-helper \
     oplus-ims-ext \
     oplus-lbs-services \
