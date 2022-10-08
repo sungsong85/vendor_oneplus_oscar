@@ -1741,44 +1741,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oscar/proprietary/system_ext/etc/horae/horae_SM8350.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/horae/horae_SM8350.conf \
     vendor/oneplus/oscar/proprietary/system_ext/etc/horae/horae_SM8450.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/horae/horae_SM8450.conf \
     vendor/oneplus/oscar/proprietary/system_ext/etc/horae/horae_SM8475.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/horae/horae_SM8475.conf \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/atlasservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/atlasservice.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/cmd.subsys.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/cmd.subsys.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/common_dcs.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/common_dcs.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/datafree.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/datafree.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/debuglog_atomic.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/debuglog_atomic.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/debuglog_common.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/debuglog_common.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/debuglog_customer.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/debuglog_customer.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/debuglog_manager.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/debuglog_manager.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/hans.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/hans.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/hapticscreencap.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/hapticscreencap.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/horae.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/horae.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.op2.mount.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.op2.mount.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.custom_logo.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.custom_logo.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.debug.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.debug.rc \
-    #vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.rootdir.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.rootdir.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.oplus.video.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.video.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.qti.bt.logger.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.qti.bt.logger.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/init.sys.oplus.connectivity.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.sys.oplus.connectivity.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/iopgp.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/iopgp.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/midasd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/midasd.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/mlogd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/mlogd.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/mmlistservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/mmlistservice.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/oifaceoplusonly.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/oifaceoplusonly.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/olog_system.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/olog_system.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/oplus_log_olc.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/oplus_log_olc.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/perfservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/perfservice.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/pmic_history_clear.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/pmic_history_clear.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/qspmsvc.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/qspmsvc.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/self_init_bsp_kevent.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/self_init_bsp_kevent.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/self_init_hephaestus.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/self_init_hephaestus.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/self_init_kevent.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/self_init_kevent.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/self_init_theia.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/self_init_theia.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/sxrauxd_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/sxrauxd_ext.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/system_engineermode.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/system_engineermode.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/tcmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/tcmd.rc \
-    vendor/oneplus/oscar/proprietary/system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.1-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.hardware.qccsyshal@1.1-service.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
     vendor/oneplus/oscar/proprietary/system_ext/etc/media/quickboot/.nomedia:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/media/quickboot/.nomedia \
     vendor/oneplus/oscar/proprietary/system_ext/etc/media/quickboot/boot_bat_temp_low.png:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/media/quickboot/boot_bat_temp_low.png \
