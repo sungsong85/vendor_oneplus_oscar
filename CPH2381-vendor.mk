@@ -1505,7 +1505,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/CPH2381/proprietary/system_ext/etc/bluetooth/bt_stack_debug.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/bluetooth/bt_stack_debug.conf \
     vendor/oneplus/CPH2381/proprietary/system_ext/etc/bluetooth/interop_database.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/bluetooth/interop_database.conf \
     vendor/oneplus/CPH2381/proprietary/system_ext/etc/bluetooth/leaudio_configs.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/bluetooth/leaudio_configs.xml \
-    vendor/oneplus/CPH2381/proprietary/system_ext/etc/build.prop:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/build.prop \
+
     vendor/oneplus/CPH2381/proprietary/system_ext/etc/bullet_nr_lib/1.png:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/bullet_nr_lib/1.png \
     vendor/oneplus/CPH2381/proprietary/system_ext/etc/bullet_nr_lib/10.png:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/bullet_nr_lib/10.png \
     vendor/oneplus/CPH2381/proprietary/system_ext/etc/bullet_nr_lib/12.png:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/bullet_nr_lib/12.png \
